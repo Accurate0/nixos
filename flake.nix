@@ -1,6 +1,6 @@
 {
-  inputs.nixpkgs.url = github:NixOS/nixpkgs;
-  inputs.home-manager.url = github:nix-community/home-manager;
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs";
+  inputs.home-manager.url = "github:nix-community/home-manager";
 
   outputs = { self, nixpkgs, home-manager, ... }@attrs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
