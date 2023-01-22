@@ -8,7 +8,6 @@ with lib.hm.gvariant;
       enabled-extensions = [
         "gtktitlebar@velitasali.github.io"
         "noannoyance@daase.net"
-        "smart-auto-move@khimaros.com"
         "dash-to-panel@jderose9.github.com"
         "alttab-mod@leleat-on-github"
       ];
@@ -20,6 +19,12 @@ with lib.hm.gvariant;
 
     "org/gnome/settings-daemon/plugins/power" = {
       sleep-inactive-ac-type = "nothing";
+    };
+
+    "org/gnome/desktop/interface" = {
+      clock-format = "12h";
+      color-scheme = "default";
+      enable-hot-corners = false;
     };
 
     "org/gnome/desktop/wm/keybindings" = {
@@ -95,6 +100,5 @@ with lib.hm.gvariant;
     gnomeExtensions.dash-to-panel
     gnomeExtensions.alttab-mod
     gnomeExtensions.no-overview
-    gnomeExtensions.smart-auto-move
   ];
 }
