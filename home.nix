@@ -1,5 +1,9 @@
 { pkgs, lib, config, ... }:
 {
+  imports = [
+    ./gnome.nix
+    ./gnome-extensions.nix
+  ];
   home.stateVersion = "22.11";
   programs.git = {
     enable = true;
