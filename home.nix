@@ -39,7 +39,7 @@
       rollback = "sudo nixos-rebuild switch --rollback --flake $HOME/nixos";
       dry-run = "sudo nixos-rebuild dry-run --flake $HOME/nixos";
       test-build = "sudo nixos-rebuild dry-run --flake $HOME/nixos";
-      build-rm = "sudo nixos-rebuild build-vm --flake $HOME/nixos";
+      build-vm = "sudo nixos-rebuild build-vm --flake $HOME/nixos";
       generate-hardware-config = "sudo nixos-generate-config --dir $HOME/nixos";
     };
   };
