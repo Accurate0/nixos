@@ -8,6 +8,7 @@ in
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./mounts.nix
     ];
 
   # Bootloader.
@@ -15,8 +16,8 @@ in
   boot.loader.timeout = 2;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
-
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.supportedFilesystems = [ "ntfs" ];
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
