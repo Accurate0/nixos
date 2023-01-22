@@ -31,6 +31,16 @@
     ".ssh".source = mkOutOfStoreSymlink "/media/arch/home/anurag/.ssh";
     Screenshots.source = mkOutOfStoreSymlink "/media/arch/home/anurag/Screenshots";
   };
-  programs.fish.enable = true;
-  programs.fish.interactiveShellInit = builtins.readFile ./resources/config.fish;
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = builtins.readFile ./resources/config.fish;
+    shellAliases = {
+      build = "sudo nixos-rebuild switch --flake $HOME/nixos";
+      rollback = "sudo nixos-rebuild switch --rollback --flake $HOME/nixos";
+      dry-run = "sudo nixos-rebuild dry-run --flake $HOME/nixos";
+      test-build = "sudo nixos-rebuild dry-run --flake $HOME/nixos";
+      build-rm = "sudo nixos-rebuild build-vm --flake $HOME/nixos";
+      generate-hardware-config = "sudo nixos-generate-config --dir $HOME/nixos";
+    };
+  };
 }
