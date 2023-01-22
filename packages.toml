@@ -30,6 +30,8 @@ packages = [
   "gnome.gnome-screenshot",
   "wl-clipboard",
   "pavucontrol",
+  "nil",
+  "nixpkgs-fmt",
 ]
 
 system-packages = [

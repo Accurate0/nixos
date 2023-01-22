@@ -7,13 +7,14 @@
       system = "x86_64-linux";
       specialArgs = attrs;
       modules = [
-      	./configuration.nix
-      	home-manager.nixosModules.home-manager {
-      		home-manager.users.anurag = {
-      			imports = [ ./home.nix ];
-      		};
-      	}
-	  ];
+        ./configuration.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.users.anurag = {
+            imports = [ ./home.nix ];
+          };
+        }
+      ];
     };
   };
 }

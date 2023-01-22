@@ -2,7 +2,8 @@
 
 let
   packageLists = import ./utils/readPackages.nix { inherit pkgs; inherit lib; package-file-path = ./packages.toml; };
-in {
+in
+{
   imports =
     [
       # Include the results of the hardware scan.
@@ -21,9 +22,9 @@ in {
   networking.networkmanager.enable = true;
   networking.extraHosts =
     ''
-    192.168.50.11  rpi
-    192.168.50.12  rpi2
-    192.168.50.166 gucci-gang
+      192.168.50.11  rpi
+      192.168.50.12  rpi2
+      192.168.50.166 gucci-gang
     '';
   services.resolved.enable = true;
 
@@ -56,8 +57,8 @@ in {
   services.xserver.displayManager.lightdm.background = ./resources/lightdm-background.jpg;
   services.xserver.displayManager.lightdm.greeters.gtk.extraConfig =
     ''
-    user-background = false
-    active-monitor = 0
+      user-background = false
+      active-monitor = 0
     '';
 
   # Configure keymap in X11
@@ -122,7 +123,7 @@ in {
   users.users.nixosvmtest.initialPassword = "test";
   users.users.nixosvmtest.packages = packageLists.userPackages;
   users.users.nixosvmtest.group = "nixosvmtest";
-  users.groups.nixosvmtest = {};
+  users.groups.nixosvmtest = { };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

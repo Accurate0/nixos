@@ -11,7 +11,7 @@
   xsession.enable = true;
   xsession.profileExtra =
     ''
-    ${pkgs.xorg.xrdb}/bin/xrdb -merge "/home/anurag/.Xresources"
+      ${pkgs.xorg.xrdb}/bin/xrdb -merge "/home/anurag/.Xresources"
     '';
   # manage normal direcories with xdg
   xdg.userDirs.enable = true;

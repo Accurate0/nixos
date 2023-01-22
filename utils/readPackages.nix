@@ -3,18 +3,19 @@ with builtins;
 with lib;
 
 let
-  packageFile = fromTOML(readFile package-file-path);
+  packageFile = fromTOML (readFile package-file-path);
   getNestedAttr = foldl' (state: arg: state.${arg} or null);
 
   asPackage = p:
     let package = getNestedAttr pkgs (splitString "." p);
-      in if package == null then
-        throw
+    in if package == null then
+      throw
         "Could not unpack `pkgs.${p}` declared in a TOML file, pkgs doesn't have that attribute."
-      else
-        package;
+    else
+      package;
 
-in {
+in
+{
   userPackages = map asPackage packageFile.packages;
   systemPackages = map asPackage packageFile.system-packages;
 }
