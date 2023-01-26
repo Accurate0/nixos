@@ -110,7 +110,7 @@ in
   environment.systemPackages = packageLists.system-packages;
 
   # fish
-  programs.fish.enable = true;
+  environment.shells = with pkgs; [ unstable.fish ];
 
   # urxvtd
   services.urxvtd.enable = true;
