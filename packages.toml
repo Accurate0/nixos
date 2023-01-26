@@ -38,6 +38,7 @@ system-packages = [
   "vim",
   "xfce.thunar",
   "docker",
+  "unstable.fish",
 ]
 
 fonts = [
