@@ -1,4 +1,7 @@
 { pkgs, lib, config, ... }:
+let
+  getLinkFromArchHome = p: config.lib.file.mkOutOfStoreSymlink "/media/arch/home/anurag/${p}";
+in
 {
   imports = [
     ./gnome.nix
@@ -27,15 +30,15 @@
   xdg.userDirs.download = null;
   xdg.userDirs.publicShare = null;
   xdg.userDirs.videos = null;
-  home.file = with config.lib.file; {
-    Projects.source = mkOutOfStoreSymlink "/media/arch/home/anurag/Projects";
-    Pictures.source = mkOutOfStoreSymlink "/media/arch/home/anurag/Pictures";
-    Wallpapers.source = mkOutOfStoreSymlink "/media/arch/home/anurag/Wallpapers";
-    ".bin".source = mkOutOfStoreSymlink "/media/arch/home/anurag/.bin";
-    Testing.source = mkOutOfStoreSymlink "/media/arch/home/anurag/Testing";
-    ".ssh".source = mkOutOfStoreSymlink "/media/arch/home/anurag/.ssh";
-    Screenshots.source = mkOutOfStoreSymlink "/media/arch/home/anurag/Screenshots";
-    Downloads.source = mkOutOfStoreSymlink "/media/arch/home/anurag/Downloads";
+  home.file = {
+    Projects.source = getLinkFromArchHome "Projects";
+    Pictures.source = getLinkFromArchHome "Pictures";
+    Wallpapers.source = getLinkFromArchHome "Wallpapers";
+    ".bin".source = getLinkFromArchHome ".bin";
+    Testing.source = getLinkFromArchHome "Testing";
+    ".ssh".source = getLinkFromArchHome ".ssh";
+    Screenshots.source = getLinkFromArchHome "Screenshots";
+    Downloads.source = getLinkFromArchHome "Downloads";
   };
   programs.fish = {
     enable = true;
