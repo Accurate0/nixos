@@ -15,7 +15,4 @@ let
       package;
 
 in
-{
-  userPackages = map asPackage packageFile.packages;
-  systemPackages = map asPackage packageFile.system-packages;
-}
+mapAttrs (key: value: map asPackage value) packageFile

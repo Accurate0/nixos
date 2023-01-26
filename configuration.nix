@@ -91,8 +91,10 @@ in
     description = "anurag";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.fish;
-    packages = packageLists.userPackages;
+    packages = packageLists.user-packages;
   };
+
+  fonts.fonts = packageLists.fonts;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -108,7 +110,7 @@ in
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = packageLists.systemPackages;
+  environment.systemPackages = packageLists.system-packages;
 
   # fish
   programs.fish.enable = true;
@@ -122,7 +124,7 @@ in
   # test vm
   users.users.nixosvmtest.isNormalUser = true;
   users.users.nixosvmtest.initialPassword = "test";
-  users.users.nixosvmtest.packages = packageLists.userPackages;
+  users.users.nixosvmtest.packages = packageLists.user-packages;
   users.users.nixosvmtest.group = "nixosvmtest";
   users.groups.nixosvmtest = { };
 
