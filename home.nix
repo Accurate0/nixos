@@ -45,7 +45,7 @@ in
     interactiveShellInit = builtins.readFile ./resources/config.fish;
     shellAliases = {
       build = "sudo nixos-rebuild switch --flake $HOME/nixos";
-      upgrade = "sudo nixos-rebuild switch --upgrade-all --flake $HOME/nixos";
+      upgrade = "nix flake update --commit-lock-file && sudo nixos-rebuild switch --flake $HOME/nixos";
       rollback = "sudo nixos-rebuild switch --rollback --flake $HOME/nixos";
       dry-run = "sudo nixos-rebuild dry-run --flake $HOME/nixos";
       test-build = "sudo nixos-rebuild dry-run --flake $HOME/nixos";
