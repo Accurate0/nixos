@@ -24,6 +24,7 @@
   xdg.userDirs.templates = null;
   xdg.userDirs.music = null;
   xdg.userDirs.pictures = null;
+  xdg.userDirs.download = null;
   xdg.userDirs.publicShare = null;
   xdg.userDirs.videos = null;
   home.file = with config.lib.file; {
@@ -34,6 +35,7 @@
     Testing.source = mkOutOfStoreSymlink "/media/arch/home/anurag/Testing";
     ".ssh".source = mkOutOfStoreSymlink "/media/arch/home/anurag/.ssh";
     Screenshots.source = mkOutOfStoreSymlink "/media/arch/home/anurag/Screenshots";
+    Downloads.source = mkOutOfStoreSymlink "/media/arch/home/anurag/Downloads";
   };
   programs.fish = {
     enable = true;
