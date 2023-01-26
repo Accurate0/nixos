@@ -90,7 +90,7 @@ in
     isNormalUser = true;
     description = "anurag";
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.fish;
+    shell = pkgs.unstable.fish;
     packages = packageLists.user-packages;
   };
 
@@ -108,6 +108,9 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = packageLists.system-packages;
+
+  # fish
+  programs.fish.enable = true;
 
   # urxvtd
   services.urxvtd.enable = true;
