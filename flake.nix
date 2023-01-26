@@ -1,20 +1,39 @@
 {
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs";
-  inputs.home-manager.url = "github:nix-community/home-manager";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
+  inputs.nixpkgs-unstable.url = "github:NixOS/nixpkgs";
+  inputs.home-manager.url = "github:nix-community/home-manager/release-22.11";
 
-  outputs = { self, nixpkgs, home-manager, ... }@attrs: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = attrs;
-      modules = [
-        ./configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.users.anurag = {
-            imports = [ ./home.nix ];
-          };
-        }
-      ];
-    };
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
+    nixosConfigurations.nixos =
+      let
+        # configure pkgs to include unstable as pkgs.unstable
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          overlays = [
+            (final: prev: {
+              unstable = import inputs.nixpkgs-unstable { system = final.system; };
+            })
+          ];
+          config = { allowUnfree = true; };
+        };
+      in
+      nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = inputs;
+        modules = [
+          ./configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.users.anurag = {
+              imports = [ ./home.nix ];
+            };
+            home-manager.useUserPackages = true;
+            home-manager.useGlobalPkgs = true;
+          }
+          {
+            nixpkgs = { inherit pkgs; };
+          }
+        ];
+      };
   };
 }
