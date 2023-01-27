@@ -31,14 +31,14 @@ in
   xdg.userDirs.publicShare = null;
   xdg.userDirs.videos = null;
   home.file = {
-    Projects.source = getLinkFromArchHome "Projects";
-    Pictures.source = getLinkFromArchHome "Pictures";
-    Wallpapers.source = getLinkFromArchHome "Wallpapers";
-    ".bin".source = getLinkFromArchHome ".bin";
-    Testing.source = getLinkFromArchHome "Testing";
-    ".ssh".source = getLinkFromArchHome ".ssh";
-    Screenshots.source = getLinkFromArchHome "Screenshots";
-    Downloads.source = getLinkFromArchHome "Downloads";
+    # Projects.source = getLinkFromArchHome "Projects";
+    # Pictures.source = getLinkFromArchHome "Pictures";
+    # Wallpapers.source = getLinkFromArchHome "Wallpapers";
+    # ".bin".source = getLinkFromArchHome ".bin";
+    # Testing.source = getLinkFromArchHome "Testing";
+    # ".ssh".source = getLinkFromArchHome ".ssh";
+    # Screenshots.source = getLinkFromArchHome "Screenshots";
+    # Downloads.source = getLinkFromArchHome "Downloads";
   };
   programs.fish = {
     enable = true;
