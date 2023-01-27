@@ -1,7 +1,4 @@
 { pkgs, lib, config, ... }:
-let
-  getLinkFromArchHome = p: config.lib.file.mkOutOfStoreSymlink "/media/arch/home/anurag/${p}";
-in
 {
   imports = [
     ./gnome.nix
@@ -30,16 +27,6 @@ in
   xdg.userDirs.download = null;
   xdg.userDirs.publicShare = null;
   xdg.userDirs.videos = null;
-  home.file = {
-    # Projects.source = getLinkFromArchHome "Projects";
-    # Pictures.source = getLinkFromArchHome "Pictures";
-    # Wallpapers.source = getLinkFromArchHome "Wallpapers";
-    # ".bin".source = getLinkFromArchHome ".bin";
-    # Testing.source = getLinkFromArchHome "Testing";
-    # ".ssh".source = getLinkFromArchHome ".ssh";
-    # Screenshots.source = getLinkFromArchHome "Screenshots";
-    # Downloads.source = getLinkFromArchHome "Downloads";
-  };
   programs.fish = {
     enable = true;
     interactiveShellInit = builtins.readFile ./resources/config.fish;
