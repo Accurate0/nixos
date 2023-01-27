@@ -46,3 +46,12 @@ fonts = [
   "roboto-mono",
   "hack-font",
 ]
+
+emulation = [
+  "qemu",
+  "libvirt",
+  "edk2",
+  "virt-manager",
+  "dnsmasq",
+  "ebtables",
+]

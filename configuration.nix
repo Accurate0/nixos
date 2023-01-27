@@ -89,12 +89,15 @@ in
   users.users.anurag = {
     isNormalUser = true;
     description = "anurag";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "kvm" "input" "libvirt" ];
     shell = pkgs.unstable.fish;
-    packages = packageLists.user-packages;
+    packages = packageLists.user-packages ++ packageLists.emulation;
   };
 
   fonts.fonts = packageLists.fonts;
+
+  # emulation
+  virtualisation.libvirtd.enable = true;
 
   # Nix settings
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
