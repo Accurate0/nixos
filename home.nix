@@ -38,6 +38,9 @@
       test-build = "sudo nixos-rebuild dry-run --flake $HOME/nixos";
       build-vm = "sudo nixos-rebuild build-vm --flake $HOME/nixos";
       generate-hardware-config = "sudo nixos-generate-config --dir $HOME/nixos";
+      gap = "ga && gp";
+      ga = "git add . && git commit -a";
+      gp = "git push";
     };
   };
 }
