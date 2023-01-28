@@ -18,6 +18,7 @@ in
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
   boot.supportedFilesystems = [ "ntfs" ];
+  boot.kernelParams = [ "amd_iommu=on" "iommu=pt" ];
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
@@ -98,6 +99,20 @@ in
 
   # emulation
   virtualisation.libvirtd.enable = true;
+  environment.etc."libvirt/hooks/qemu" = {
+    source = ./resources/qemu/qemu;
+    mode = "0744";
+  };
+
+  environment.etc."libvirt/hooks/qemu.d/win10/prepare/begin/start.sh" = {
+    source = ./resources/qemu/start.sh;
+    mode = "0744";
+  };
+
+  environment.etc."libvirt/hooks/qemu.d/win10/release/end/stop.sh" = {
+    source = ./resources/qemu/stop.sh;
+    mode = "0744";
+  };
 
   # Nix settings
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

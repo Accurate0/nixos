@@ -54,4 +54,5 @@ emulation = [
   "virt-manager",
   "dnsmasq",
   "ebtables",
+  "pciutils",
 ]
