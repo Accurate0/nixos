@@ -92,7 +92,7 @@ in
     description = "anurag";
     extraGroups = [ "networkmanager" "wheel" "kvm" "input" "libvirt" ];
     shell = pkgs.unstable.fish;
-    packages = packageLists.user-packages ++ packageLists.emulation;
+    packages = packageLists.user-packages ++ packageLists.emulation ++ packageLists.shells ++ packageLists.development;
   };
 
   fonts.fonts = packageLists.fonts;

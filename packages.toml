@@ -1,7 +1,6 @@
 user-packages = [
   "firefox",
   "discord",
-  "git",
   "wget",
   "spotify",
   "xorg.xrdb",
@@ -9,27 +8,14 @@ user-packages = [
   "rxvt-unicode",
   "xorg.xeyes",
   "fortune",
-  "unstable.fish",
-  "vscode",
   "easyeffects",
-  "terraform",
-  "azure-cli",
-  "awscli2",
   "fzf",
   "evince",
-  "rustup",
-  "gcc",
-  "gnumake",
   "google-chrome",
-  "sublime3",
   "feh",
-  "dash",
   "gnome.gnome-screenshot",
   "wl-clipboard",
   "pavucontrol",
-  "nil",
-  "nixpkgs-fmt",
-  "dconf2nix",
 ]
 
 system-packages = [
@@ -45,6 +31,27 @@ fonts = [
   "source-code-pro",
   "roboto-mono",
   "hack-font",
+]
+
+shells = [
+  "unstable.fish",
+  "dash",
+]
+
+development = [
+  "shellcheck",
+  "rustup",
+  "gcc",
+  "sublime3",
+  "gnumake",
+  "nil",
+  "nixpkgs-fmt",
+  "vscode",
+  "dconf2nix",
+  "terraform",
+  "git",
+  "azure-cli",
+  "awscli2",
 ]
 
 emulation = [
