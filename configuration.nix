@@ -98,8 +98,8 @@ in
   fonts.fonts = packageLists.fonts;
 
   # emulation
-  services.sshd.enable = true;
-  virtualisation.libvirtd.enable = true;
+  services.sshd.enable = false;
+  virtualisation.libvirtd.enable = false;
   environment.etc."libvirt/hooks/qemu" = {
     source = ./resources/qemu/qemu;
     mode = "0744";
