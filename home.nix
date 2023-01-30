@@ -41,6 +41,8 @@
       gap = "ga && gp";
       ga = "git add . && git commit -a";
       gp = "git push";
+      gs = "git status";
+      cb = "cd -";
     };
   };
 }
