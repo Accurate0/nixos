@@ -52,6 +52,8 @@ development = [
   "git",
   "azure-cli",
   "awscli2",
+  "dotnet-sdk",
+  "yarn",
 ]
 
 emulation = [
