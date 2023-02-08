@@ -95,6 +95,10 @@ in
     packages = packageLists.user-packages ++ packageLists.emulation ++ packageLists.shells ++ packageLists.development;
   };
 
+  environment.variables = {
+    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+  };
+
   fonts.fonts = packageLists.fonts;
 
   # emulation
@@ -129,6 +133,7 @@ in
   environment.systemPackages = packageLists.system-packages;
 
   # fish
+  programs.fish.enable = true;
   environment.shells = with pkgs; [ unstable.fish ];
 
   # urxvtd

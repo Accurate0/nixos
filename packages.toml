@@ -54,6 +54,8 @@ development = [
   "awscli2",
   "dotnet-sdk",
   "yarn",
+  "openssl",
+  "openssl.dev",
 ]
 
 emulation = [
