@@ -9,15 +9,21 @@
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
     nixosConfigurations.nixos =
       let
+        nixpkgs-config = {
+          allowUnfree = true;
+        };
         # configure pkgs to include unstable as pkgs.unstable
         pkgs = import nixpkgs {
           system = "x86_64-linux";
           overlays = [
             (final: prev: {
-              unstable = import inputs.nixpkgs-unstable { system = final.system; };
+              unstable = import inputs.nixpkgs-unstable {
+                system = final.system;
+                config = nixpkgs-config;
+              };
             })
           ];
-          config = { allowUnfree = true; };
+          config = nixpkgs-config;
         };
       in
       nixpkgs.lib.nixosSystem {

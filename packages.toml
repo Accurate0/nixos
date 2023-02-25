@@ -1,4 +1,4 @@
-user-packages = [
+general = [
   "firefox",
   "discord",
   "wget",
@@ -16,15 +16,6 @@ user-packages = [
   "gnome.gnome-screenshot",
   "wl-clipboard",
   "pavucontrol",
-]
-
-system-packages = [
-  "lightdm",
-  "linuxKernel.kernels.linux_xanmod",
-  "vim",
-  "xfce.thunar",
-  "docker",
-  "unstable.fish",
 ]
 
 fonts = [
@@ -46,7 +37,7 @@ development = [
   "gnumake",
   "nil",
   "nixpkgs-fmt",
-  "vscode",
+  "unstable.vscode",
   "dconf2nix",
   "terraform",
   "git",
@@ -57,6 +48,9 @@ development = [
   "openssl",
   "openssl.dev",
   "jq",
+  "arduino",
+  "arduino-core",
+  "arduino-cli",
 ]
 
 emulation = [
@@ -67,4 +61,16 @@ emulation = [
   "dnsmasq",
   "ebtables",
   "pciutils",
+]
+
+system-packages = [
+  "lightdm",
+  "linuxKernel.kernels.linux_xanmod",
+  "vim",
+  "xfce.thunar",
+  "docker",
+  "unstable.fish",
+  "libusb1",
+  "lm_sensors",
+  "iftop"
 ]

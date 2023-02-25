@@ -2,6 +2,7 @@
 
 let
   packageLists = import ./utils/readPackages.nix { inherit pkgs; inherit lib; package-file-path = ./packages.toml; };
+  userPackagesFull = packageLists.general ++ packageLists.emulation ++ packageLists.shells ++ packageLists.development;
 in
 {
   imports =
@@ -90,10 +91,15 @@ in
   users.users.anurag = {
     isNormalUser = true;
     description = "anurag";
-    extraGroups = [ "networkmanager" "wheel" "kvm" "input" "libvirt" ];
+    extraGroups = [ "networkmanager" "wheel" "kvm" "input" "libvirt" "dailout" ];
     shell = pkgs.unstable.fish;
-    packages = packageLists.user-packages ++ packageLists.emulation ++ packageLists.shells ++ packageLists.development;
+    packages = userPackagesFull;
   };
+
+  services.udev.extraRules = ''
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="16d0", ATTRS{idProduct}=="0753", MODE:="0666"
+    KERNEL=="ttyACM*", ATTRS{idVendor}=="16d0", ATTRS{idProduct}=="0753", MODE:="0666", ENV{ID_MM_DEVICE_IGNORE}="1"
+  '';
 
   environment.variables = {
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
@@ -145,7 +151,7 @@ in
   # test vm
   users.users.nixosvmtest.isNormalUser = true;
   users.users.nixosvmtest.initialPassword = "test";
-  users.users.nixosvmtest.packages = packageLists.user-packages;
+  users.users.nixosvmtest.packages = packageLists.general;
   users.users.nixosvmtest.group = "nixosvmtest";
   users.groups.nixosvmtest = { };
 
