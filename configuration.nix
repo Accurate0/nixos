@@ -91,7 +91,7 @@ in
   users.users.anurag = {
     isNormalUser = true;
     description = "anurag";
-    extraGroups = [ "networkmanager" "wheel" "kvm" "input" "libvirt" "dailout" ];
+    extraGroups = [ "networkmanager" "wheel" "kvm" "input" "libvirt" "dailout" "docker" ];
     shell = pkgs.unstable.fish;
     packages = userPackagesFull;
   };
@@ -137,6 +137,9 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = packageLists.system-packages;
+
+  # docker
+  virtualisation.docker.enable = true;
 
   # fish
   programs.fish.enable = true;

@@ -48,9 +48,6 @@ development = [
   "openssl",
   "openssl.dev",
   "jq",
-  "arduino",
-  "arduino-core",
-  "arduino-cli",
 ]
 
 emulation = [
