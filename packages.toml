@@ -16,6 +16,7 @@ general = [
   "gnome.gnome-screenshot",
   "wl-clipboard",
   "pavucontrol",
+  "file",
 ]
 
 fonts = [
@@ -48,6 +49,10 @@ development = [
   "openssl",
   "openssl.dev",
   "jq",
+  "docker-compose",
+  "musl.dev",
+  "gcc-arm-embedded-10",
+  "python3Minimal"
 ]
 
 emulation = [
