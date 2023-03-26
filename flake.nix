@@ -4,9 +4,11 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs";
     home-manager.url = "github:nix-community/home-manager/release-22.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nix-ld.url = "github:Mic92/nix-ld";
+    nix-ld.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ nix-ld, self, nixpkgs, home-manager, ... }: {
     nixosConfigurations.nixos =
       let
         nixpkgs-config = {
@@ -30,6 +32,7 @@
         system = "x86_64-linux";
         specialArgs = inputs;
         modules = [
+          nix-ld.nixosModules.nix-ld
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {

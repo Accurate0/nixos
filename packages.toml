@@ -52,7 +52,11 @@ development = [
   "docker-compose",
   "musl.dev",
   "gcc-arm-embedded-10",
-  "python3Minimal"
+  "python3Minimal",
+  "nix-index",
+  "mongosh",
+  "mongodb-compass",
+  "zig",
 ]
 
 emulation = [
