@@ -2,7 +2,7 @@ general = [
   "firefox",
   "discord",
   "wget",
-  "spotify",
+  "unstable.spotify",
   "xorg.xrdb",
   "htop",
   "rxvt-unicode",
@@ -17,18 +17,12 @@ general = [
   "wl-clipboard",
   "pavucontrol",
   "file",
+  "obsidian",
 ]
 
-fonts = [
-  "source-code-pro",
-  "roboto-mono",
-  "hack-font",
-]
+fonts = ["source-code-pro", "roboto-mono", "hack-font"]
 
-shells = [
-  "unstable.fish",
-  "dash",
-]
+shells = ["unstable.fish", "dash"]
 
 development = [
   "shellcheck",
@@ -78,5 +72,5 @@ system-packages = [
   "unstable.fish",
   "libusb1",
   "lm_sensors",
-  "iftop"
+  "iftop",
 ]

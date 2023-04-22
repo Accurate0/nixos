@@ -17,6 +17,8 @@
     ''
       ${pkgs.xorg.xrdb}/bin/xrdb -merge "/home/anurag/.Xresources"
     '';
+  services.easyeffects.enable = true;
+  services.easyeffects.preset = "A";
   # manage normal direcories with xdg
   xdg.userDirs.enable = true;
   xdg.userDirs.createDirectories = true;
