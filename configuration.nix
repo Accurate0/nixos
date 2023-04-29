@@ -20,6 +20,10 @@ in
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
   boot.supportedFilesystems = [ "ntfs" ];
   boot.kernelParams = [ "amd_iommu=on" "iommu=pt" ];
+  boot.extraModprobeConfig =
+    ''
+      options hid_apple fnmode=2
+    '';
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
