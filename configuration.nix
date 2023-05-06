@@ -57,8 +57,8 @@ in
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = false;
-  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.lightdm.enable = false;
   services.xserver.desktopManager.gnome.enable = true;
 
   services.xserver.displayManager.lightdm.background = ./resources/lightdm-background.jpg;
