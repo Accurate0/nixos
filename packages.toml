@@ -34,7 +34,7 @@ development = [
   "nixpkgs-fmt",
   "unstable.vscode",
   "dconf2nix",
-  "terraform",
+  "unstable.terraform",
   "git",
   "azure-cli",
   "awscli2",

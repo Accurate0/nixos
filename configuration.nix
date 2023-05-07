@@ -77,6 +77,9 @@ in
   # Enable CUPS to print documents.
   services.printing.enable = false;
 
+  services.hardware.openrgb.enable = true;
+  services.hardware.openrgb.motherboard = "amd";
+
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
