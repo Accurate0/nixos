@@ -51,6 +51,15 @@ development = [
   "mongosh",
   "mongodb-compass",
   "zig",
+  "unstable.flyctl",
+  "bind",
+  "android-studio",
+  "android-tools",
+  "nodejs",
+  "apktool",
+  "wireguard-tools",
+  "insomnia",
+  "unstable.nodePackages_latest.vercel",
 ]
 
 emulation = [
