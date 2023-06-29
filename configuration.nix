@@ -31,8 +31,6 @@ in
   networking.extraHosts =
     ''
       192.168.50.11  rpi
-      192.168.50.12  rpi2
-      192.168.50.166 gucci-gang
     '';
   services.resolved.enable = true;
 
