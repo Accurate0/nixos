@@ -60,6 +60,8 @@ development = [
   "wireguard-tools",
   "insomnia",
   "unstable.nodePackages_latest.vercel",
+  "unstable.nodePackages_latest.pnpm",
+  "zip",
 ]
 
 emulation = [

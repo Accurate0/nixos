@@ -20,7 +20,7 @@ in
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
   boot.supportedFilesystems = [ "ntfs" ];
   boot.kernelParams = [ "amd_iommu=on" "iommu=pt" ];
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" "aarch64_be-linux" ];
   boot.extraModprobeConfig =
     ''
       options hid_apple fnmode=2
