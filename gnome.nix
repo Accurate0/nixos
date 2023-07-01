@@ -10,11 +10,13 @@ with lib.hm.gvariant;
         "noannoyance@daase.net"
         "dash-to-panel@jderose9.github.com"
         "alttab-mod@leleat-on-github"
+        "clipboard-indicator@tudmotu.com"
+        "no-overview@fthx"
       ];
     };
 
     "org/gnome/system/location" = {
-      enabled = true;
+      enabled = false;
     };
 
     "org/gnome/settings-daemon/plugins/power" = {
@@ -44,7 +46,7 @@ with lib.hm.gvariant;
     "org/gnome/settings-daemon/plugins/color" = {
       night-light-enabled = true;
       night-light-last-coordinates = mkTuple [ (-37.77481833988481) 144.833283 ];
-      night-light-temperature = mkUint32 2700;
+      night-light-temperature = mkUint32 2300;
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -99,6 +101,8 @@ with lib.hm.gvariant;
     gnomeExtensions.gtk-title-bar
     gnomeExtensions.dash-to-panel
     gnomeExtensions.alttab-mod
+    gnomeExtensions.no-overview
+    gnomeExtensions.clipboard-indicator
     gnomeExtensions.no-overview
   ];
 }
