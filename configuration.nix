@@ -60,13 +60,6 @@ in
   services.xserver.displayManager.lightdm.enable = false;
   services.xserver.desktopManager.gnome.enable = true;
 
-  services.xserver.displayManager.lightdm.background = ./resources/lightdm-background.jpg;
-  services.xserver.displayManager.lightdm.greeters.gtk.extraConfig =
-    ''
-      user-background = false
-      active-monitor = 0
-    '';
-
   # Configure keymap in X11
   services.xserver = {
     layout = "us";
